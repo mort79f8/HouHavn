@@ -1,0 +1,49 @@
+﻿@page
+@model HouHavn.Web.Pages.Lists.AllBerthsModel
+
+@{
+    ViewData["Title"] = "AllBerths";
+}
+
+<h1>AllBerths</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Berth[0].BerthId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Berth[0].Bridge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Berth[0].Boats.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Berth[0].Boats.FirstOrDefault().PersonNavigation.FullName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Berth) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BerthId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bridge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

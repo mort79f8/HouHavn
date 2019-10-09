@@ -1,0 +1,75 @@
+﻿@page
+@model HouHavn.Web.Pages.Creation.BoatsModel
+
+@{
+    ViewData["Title"] = "Boats";
+}
+
+<h1>Boats</h1>
+
+<h4>Boat</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Boat.Name" class="control-label"></label>
+                <input asp-for="Boat.Name" class="form-control" />
+                <span asp-validation-for="Boat.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Type" class="control-label"></label>
+                <input asp-for="Boat.Type" class="form-control" />
+                <span asp-validation-for="Boat.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Length" class="control-label"></label>
+                <input asp-for="Boat.Length" class="form-control" />
+                <span asp-validation-for="Boat.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Width" class="control-label"></label>
+                <input asp-for="Boat.Width" class="form-control" />
+                <span asp-validation-for="Boat.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Dept" class="control-label"></label>
+                <input asp-for="Boat.Dept" class="form-control" />
+                <span asp-validation-for="Boat.Dept" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.PropulsionType" class="control-label"></label><br />
+                <select asp-for="Boat.PropulsionType" class="form-control">
+                    <option value="Motorbåd/Jolle">Motorbåd/Jolle</option>
+                    <option value="Sejlbåd/Kølbåd">Sejlbåd/Kølbåd</option>
+                </select>
+                <span asp-validation-for="Boat.PropulsionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Person" class="control-label"></label>
+                <select asp-for="Boat.Person" class ="form-control" asp-items="ViewBag.Person"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Berth" class="control-label"></label>
+                <select asp-for="Boat.Berth" class ="form-control" asp-items="ViewBag.Berth"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Notes" class="control-label"></label>
+                <input asp-for="Boat.Notes" class="form-control" />
+                <span asp-validation-for="Boat.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
