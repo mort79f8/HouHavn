@@ -39,6 +39,8 @@ namespace HouHavn.Web.Model
         [Display(Name = "Båd plads")]
         [Required]
         public int Berth { get; set; }
+
+        [Display(Name = "Noter")]
         public string Notes { get; set; }
         public virtual Berth BerthNavigation { get; set; }
         public virtual Person PersonNavigation { get; set; }

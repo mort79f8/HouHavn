@@ -5,70 +5,84 @@
     ViewData["Title"] = "Boats";
 }
 
-<h1>Boats</h1>
-
-<h4>Boat</h4>
+<h2>Opret båd</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Boat.Name" class="control-label"></label>
-                <input asp-for="Boat.Name" class="form-control" />
-                <span asp-validation-for="Boat.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Type" class="control-label"></label>
-                <input asp-for="Boat.Type" class="form-control" />
-                <span asp-validation-for="Boat.Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Length" class="control-label"></label>
-                <input asp-for="Boat.Length" class="form-control" />
-                <span asp-validation-for="Boat.Length" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Width" class="control-label"></label>
-                <input asp-for="Boat.Width" class="form-control" />
-                <span asp-validation-for="Boat.Width" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Dept" class="control-label"></label>
-                <input asp-for="Boat.Dept" class="form-control" />
-                <span asp-validation-for="Boat.Dept" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.PropulsionType" class="control-label"></label><br />
-                <select asp-for="Boat.PropulsionType" class="form-control">
-                    <option value="Motorbåd/Jolle">Motorbåd/Jolle</option>
-                    <option value="Sejlbåd/Kølbåd">Sejlbåd/Kølbåd</option>
-                </select>
-                <span asp-validation-for="Boat.PropulsionType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Person" class="control-label"></label>
-                <select asp-for="Boat.Person" class ="form-control" asp-items="ViewBag.Person"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Berth" class="control-label"></label>
-                <select asp-for="Boat.Berth" class ="form-control" asp-items="ViewBag.Berth"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Boat.Notes" class="control-label"></label>
-                <input asp-for="Boat.Notes" class="form-control" />
-                <span asp-validation-for="Boat.Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<form method="post" autocomplete="off">
+    <div asp-validation-summary="All" class="error"></div>
 
-<div>
-    <a asp-page="/Index">Back to List</a>
-</div>
+    <div class="input">
+        <input asp-for="Boat.Name" placeholder=" "/>
+        <label asp-for="Boat.Name"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Name" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Type" placeholder=" "/>
+        <label asp-for="Boat.Type"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Type" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Length" type="number" placeholder=" "/>
+        <label asp-for="Boat.Length"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Length" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Width" type="number" placeholder=" "/>
+        <label asp-for="Boat.Width"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Width" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Dept" type="number" placeholder=" " />
+        <label asp-for="Boat.Dept"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Dept" class="error"></span>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.PropulsionType"></label>
+        <select asp-for="Boat.PropulsionType">
+            <option value="Motorbåd/Jolle">Motorbåd/Jolle</option>
+            <option value="Sejlbåd/Kølbåd">Sejlbåd/Kølbåd</option>
+        </select>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.Person"></label>
+        <select asp-for="Boat.Person" asp-items="ViewBag.Person"></select>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.Berth"></label>
+        <select asp-for="Boat.Berth" asp-items="ViewBag.Berth"></select>
+    </div>
+
+    <div class="textarea">
+        <label asp-for="Boat.Notes"></label>
+        <textarea asp-for="Boat.Notes"></textarea>
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="Opret Båd" />
+    </div>
+</form>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

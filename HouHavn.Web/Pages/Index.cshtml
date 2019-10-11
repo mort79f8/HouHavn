@@ -1,15 +1,16 @@
 ﻿@page
 @model HouHavn.Web.Pages.IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Forside";
 }
 
-<h1>Index</h1>
+<h1>Velkommen til Hou Havn administration</h1>
 
-<a asp-page="Creation/Berths">Berths</a><br/>
-<a asp-page="Creation/People">People</a><br />
-<a asp-page="Creation/Boats">Boats</a><br /><br />
+<div class="links">
+    <h3><a asp-page="Creation/Berths">Opret bådpladser</a></h3>
+    <h3><a asp-page="Creation/People">Opret kunder</a></h3>
+    <h3><a asp-page="Creation/Boats">Opret både</a></h3>
 
-<a asp-page="Lists/Berths">Berths list</a><br/>
-<a asp-page="Lists/AllBerths">All berths list</a>
+    <h3><a asp-page="Lists/AllBerths">Liste over bådpladser</a></h3>
+</div>
 

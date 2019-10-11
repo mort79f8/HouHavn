@@ -59,6 +59,7 @@ namespace HouHavn.Web.Model
         [Display(Name = "Noter")]
         public string Notes { get; set; }
 
+        [Display(Name = "Kundens navn")]
         public string FullName
         {
             get
