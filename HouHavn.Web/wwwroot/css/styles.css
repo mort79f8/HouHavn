@@ -11,57 +11,61 @@ h1, h2, h3, h4 {
   font-weight: lighter; }
 
 header {
-  width: 70vw;
-  padding: 0 15vw;
-  display: flex;
   box-shadow: 0 0 10px black;
   align-items: center;
   background: white;
   position: sticky;
   top: 0;
-  z-index: 3; }
-  header .logo {
-    text-decoration: none;
-    color: #333;
-    margin-right: 20px;
-    position: relative;
-    z-index: 100;
-    background: white; }
-  header nav ul {
-    list-style: none;
-    display: flex; }
-    header nav ul li {
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%; }
+  header > div {
+    width: 70%;
+    display: flex;
+    margin: 0 auto; }
+    header > div .logo {
+      text-decoration: none;
+      color: #333;
+      margin-right: 20px;
       position: relative;
-      z-index: 3;
-      user-select: none; }
-      header nav ul li span {
-        padding: 15px 40px;
-        display: block;
+      z-index: 100;
+      background: white; }
+    header > div nav ul {
+      list-style: none;
+      display: flex; }
+      header > div nav ul li {
         position: relative;
-        z-index: 2;
-        background: white; }
-      header nav ul li:hover span {
-        background: #eee; }
-      header nav ul li:hover div {
-        transform: translateY(100%); }
-      header nav ul li div {
-        position: absolute;
-        bottom: 0;
-        background: white;
-        width: 100%;
-        z-index: initial;
-        transition: .3s; }
-        header nav ul li div a {
+        z-index: 3;
+        user-select: none; }
+        header > div nav ul li span {
+          padding: 15px 40px;
           display: block;
-          padding: 10px 20px;
-          border: 1px solid #ccc;
-          color: black;
-          text-decoration: none; }
-          header nav ul li div a:hover {
-            background: #eee; }
-          header nav ul li div a:nth-child(2) {
-            border-top: 0;
-            border-bottom: 0; }
+          position: relative;
+          z-index: 2;
+          background: white; }
+        header > div nav ul li:hover span {
+          background: #eee; }
+        header > div nav ul li:hover div {
+          transform: translateY(100%); }
+        header > div nav ul li div {
+          position: absolute;
+          bottom: 0;
+          background: white;
+          width: 100%;
+          z-index: initial;
+          transition: .3s; }
+          header > div nav ul li div a {
+            display: block;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            color: black;
+            text-decoration: none; }
+            header > div nav ul li div a:hover {
+              background: #eee; }
+            header > div nav ul li div a:nth-child(2) {
+              border-top: 0;
+              border-bottom: 0; }
 
 main {
   width: 70%;
@@ -164,14 +168,29 @@ form {
       width: 100%;
       padding: 5px; }
 
+.table {
+  overflow-x: auto;
+  border-spacing: 0; }
+  .table th, .table td {
+    padding: 5px 15px; }
+  .table tr:nth-child(even) {
+    background: #eee; }
+
 .error {
   color: #dd0000; }
 
 @media screen and (max-width: 660px) {
-  header {
+  main {
+    padding: 40px 5% 60px;
+    /* header - footer - main-padding */
+    min-height: calc(100vh - 89px - 52px - 100px);
+    width: 90%; }
+  header > div {
     flex-direction: column;
-    padding: 0;
     width: 100vw; }
-    header .logo {
+    header > div .logo {
       text-align: center;
-      width: 100%; } }
+      width: 100%; }
+    header > div nav {
+      display: flex;
+      justify-content: space-around; } }

@@ -22,25 +22,28 @@
 </head>
 <body>
     <header>
-        <a asp-page="/index" class="logo"><h1>Hou Havn</h1></a>
-        <nav>
-            <ul>
-                <li>
-                    <span>Opret</span>
-                    <div>
-                        <a asp-page="/creation/berths">Bådplads</a>
-                        <a asp-page="/creation/People">Kunde</a>
-                        <a asp-page="/creation/Boats">Båd</a>
-                    </div>
-                </li>
-                <li>
-                    <span>Se liste over</span>
-                    <div>
-                        <a asp-page="/Lists/AllBerths">Bådpladser</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            <a asp-page="/index" class="logo"><h1>Hou Havn</h1></a>
+            <nav>
+                <ul>
+                    <li>
+                        <span>Opret</span>
+                        <div>
+                            <a asp-page="/creation/berths">Bådplads</a>
+                            <a asp-page="/creation/People">Kunde</a>
+                            <a asp-page="/creation/Boats">Båd</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Se liste over</span>
+                        <div>
+                            <a asp-page="/Lists/AllBerths">Bådpladser</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
 
     <partial name="_CookieConsentPartial" />

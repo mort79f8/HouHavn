@@ -14,77 +14,83 @@ h1, h2, h3, h4 {
 }
 
 header {
-    width: 70vw;
-    padding: 0 15vw;
-    display: flex;
     box-shadow: 0 0 10px black;
     align-items: center;
     background: white;
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 3;
+    width: 100%;
 
-    .logo {
-        text-decoration: none;
-        color: #333;
-        margin-right: 20px;
-        position: relative;
-        z-index: 100;
-        background: white;
-    }
+    >div{
+        width: 70%;
+        display: flex;
+        margin: 0 auto;
 
-    nav {
+        .logo {
+            text-decoration: none;
+            color: #333;
+            margin-right: 20px;
+            position: relative;
+            z-index: 100;
+            background: white;
+        }
 
-        ul {
-            list-style: none;
-            display: flex;
+        nav {
 
-            li {
-                position: relative;
-                z-index: 3;
-                user-select: none;
+            ul {
+                list-style: none;
+                display: flex;
 
-                span {
-                    padding: 15px 40px;
-                    display: block;
+                li {
                     position: relative;
-                    z-index: 2;
-                    background: white;
-                }
+                    z-index: 3;
+                    user-select: none;
 
-                &:hover{
                     span {
-                        background: #eee;
-                    }
-
-                    div {
-                        transform: translateY(100%);
-                    }
-                }
-
-                div {
-                    position: absolute;
-                    bottom: 0;
-                    background: white;
-                    width: 100%;
-                    z-index: initial;
-                    transition: .3s;
-                  
-
-                    a {
+                        padding: 15px 40px;
                         display: block;
-                        padding: 10px 20px;
-                        border: 1px solid #ccc;
-                        color: black;
-                        text-decoration: none;
+                        position: relative;
+                        z-index: 2;
+                        background: white;
+                    }
 
-                        &:hover {
+                    &:hover{
+                        span {
                             background: #eee;
                         }
 
-                        &:nth-child(2) {
-                            border-top: 0;
-                            border-bottom: 0;
+                        div {
+                            transform: translateY(100%);
+                        }
+                    }
+
+                    div {
+                        position: absolute;
+                        bottom: 0;
+                        background: white;
+                        width: 100%;
+                        z-index: initial;
+                        transition: .3s;
+                  
+
+                        a {
+                            display: block;
+                            padding: 10px 20px;
+                            border: 1px solid #ccc;
+                            color: black;
+                            text-decoration: none;
+
+                            &:hover {
+                                background: #eee;
+                            }
+
+                            &:nth-child(2) {
+                                border-top: 0;
+                                border-bottom: 0;
+                            }
                         }
                     }
                 }
@@ -242,19 +248,43 @@ form {
     }
 }
 
+.table{
+    overflow-x: auto;
+    border-spacing: 0;
+    th, td{
+        padding: 5px 15px;
+    }
+
+    tr:nth-child(even){
+        background: #eee;
+    }
+}
+
 .error{
     color: #dd0000;
 }
 
 @media screen and (max-width:660px){
-    header {
+    main {
+        padding: 40px 5% 60px;
+        /* header - footer - main-padding */
+        min-height: calc(100vh - 89px - 52px - 100px);
+        width: 90%;
+    }
+
+
+    header >div{
         flex-direction: column;
-        padding: 0;
         width: 100vw;
 
         .logo {
             text-align: center;
             width: 100%;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-around;
         }
     }
 }
