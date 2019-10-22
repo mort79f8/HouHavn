@@ -24,7 +24,7 @@
         <div class="tooltip @avail ">
             @if (item.Boats.FirstOrDefault() != null)
             {
-                <a href="/creation/boatinfo/@item.Boats.FirstOrDefault().BoatId">
+                <a href="/display/boatinfo/@item.Boats.FirstOrDefault().BoatId">
                     @Html.DisplayFor(modelItem => item.BerthId)
                     @if (item.Boats.FirstOrDefault() != null)
                     {

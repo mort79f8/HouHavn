@@ -24,10 +24,11 @@ header {
     z-index: 3;
     width: 100%;
 
-    >div{
+    > div {
         width: 70%;
         display: flex;
         margin: 0 auto;
+        position:relative;
 
         .logo {
             text-decoration: none;
@@ -39,6 +40,15 @@ header {
         }
 
         nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            form {
+                justify-content: flex-end;
+                position:absolute;
+                right: 0;
+            }
 
             ul {
                 list-style: none;
@@ -57,7 +67,7 @@ header {
                         background: white;
                     }
 
-                    &:hover{
+                    &:hover {
                         span {
                             background: #eee;
                         }
@@ -74,7 +84,7 @@ header {
                         width: 100%;
                         z-index: initial;
                         transition: .3s;
-                  
+
 
                         a {
                             display: block;
