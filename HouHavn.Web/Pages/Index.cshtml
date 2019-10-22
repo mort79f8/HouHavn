@@ -1,16 +1,43 @@
 ﻿@page
 @model HouHavn.Web.Pages.IndexModel
+
 @{
     ViewData["Title"] = "Forside";
 }
 
-<h1>Velkommen til Hou Havn administration</h1>
+<h1>Båd plads nummer</h1>
 
-<div class="links">
-    <h3><a asp-page="Creation/Berths">Opret bådpladser</a></h3>
-    <h3><a asp-page="Creation/People">Opret kunder</a></h3>
-    <h3><a asp-page="Creation/Boats">Opret både</a></h3>
+@{
+    int totalBerths = Model.Berth.Count;
+    int totalNumberOfBoxs = totalBerths / 60;
+}
 
-    <h3><a asp-page="Lists/AllBerths">Liste over bådpladser</a></h3>
-</div>
+@for (int i = 0; i < totalNumberOfBoxs + 1; i++)
+{
 
+    <div class="berthdisplay">
+        @foreach (var item in Model.Berth.Where(b => b.BerthId > i * 60 && b.BerthId <= (i+1) * 60))
+        {
+
+            string avail = item.Boats.FirstOrDefault() != null ? "available" : "notavailable";
+
+        <div class="tooltip @avail ">
+            @if (item.Boats.FirstOrDefault() != null)
+            {
+                <a href="/creation/boatinfo/@item.Boats.FirstOrDefault().BoatId">
+                    @Html.DisplayFor(modelItem => item.BerthId)
+                    @if (item.Boats.FirstOrDefault() != null)
+                    {
+                        <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
+                    }
+                </a>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.BerthId)
+            }
+        </div>
+        }
+    </div>
+<br />
+}

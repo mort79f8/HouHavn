@@ -1,0 +1,37 @@
+﻿@page "{boatId}"
+@model HouHavn.Web.Pages.Creation.BoatInfoModel
+@{
+    ViewData["Title"] = "BoatInfo";
+}
+
+
+@if (Model.Boat != null)
+{
+    <h1>Info side til: @Model.Boat.Name</h1>
+    <br />
+    <p>Type: @Model.Boat.Type</p>
+    <p>Længde: @Model.Boat.Length</p>
+    <p>Bredde: @Model.Boat.Width</p>
+    <p>Dybte: @Model.Boat.Dept</p>
+    <p>Noter: @Model.Boat.Notes</p>
+    <br />
+    <p>Ejer: @Model.Boat.PersonNavigation.FullName</p>    
+    <p>Adresse: @Model.Boat.PersonNavigation.Address</p>
+    <p>Post nummer: @Model.Boat.PersonNavigation.PostalCode</p>
+    <p>By: @Model.Boat.PersonNavigation.City</p>
+    <p>Land: @Model.Boat.PersonNavigation.Country</p>
+    <p>E-mail: @Model.Boat.PersonNavigation.Email</p>
+    <p>Tlf nummer: @Model.Boat.PersonNavigation.PhoneNumber</p>
+    <p>Noter: @Model.Boat.PersonNavigation.Notes</p>
+    <br />
+    <p>Kunde af havn: @(@Model.Boat.PersonNavigation.Member == 1 ? "Ja" : "Nej")</p>
+    <p>Medlem af bådlaug: @(@Model.Boat.PersonNavigation.BoatGuild == 1 ? "Ja" : "Nej")</p>
+    <p>Medlem af Jollelaug: @(@Model.Boat.PersonNavigation.DingyGuild == 1 ? "Ja" : "Nej")</p>
+    
+
+
+}
+else
+{
+    <h1>Båden blev ikke fundet</h1>
+}

@@ -2,32 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HouHavn.Web.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using HouHavn.Web.Model;
 
-namespace HouHavn.Web.Pages
+namespace HouHavn.Web.Pages.Creation
 {
-    public class IndexModel : PageModel
+    public class BoatInfoModel : PageModel
     {
-        private readonly HouhavnContext _context;
 
-        public IndexModel(HouhavnContext context)
+        private readonly HouhavnContext _context;
+        [BindProperty(SupportsGet = true)]
+        public int BoatId { get; set; }
+        public Boat Boat { get; set; }
+
+        public IList<Boat> Boats { get; set; }
+        public IList<Person> People { get; set; }
+
+        public BoatInfoModel(HouhavnContext context)
         {
             _context = context;
 
         }
 
-        public IList<Berth> Berth { get;set; }
-        public IList<Boat> Boats { get;set; }
-        public IList<Person> People { get; set; }
-
         public async Task OnGetAsync()
         {
-            Berth = await _context.Berths.ToListAsync();
             Boats = await _context.Boats.ToListAsync();
+            Boat = Boats.Where(b => b.BoatId == BoatId).FirstOrDefault();
             People = await _context.Persons.ToListAsync();
         }
+
     }
 }
