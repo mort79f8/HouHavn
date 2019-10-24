@@ -1,0 +1,143 @@
+﻿@page
+@model HouHavn.Web.Pages.Lists.People.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+
+<form method="post">
+    <div class="input">
+        <input asp-for="Person.FirstName" placeholder=" " />
+        <label asp-for="Person.FirstName"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.FirstName" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.LastName" placeholder=" " />
+        <label asp-for="Person.LastName"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.LastName" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.Address" placeholder=" " />
+        <label asp-for="Person.Address"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.Address" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.PostalCode" placeholder=" " />
+        <label asp-for="Person.PostalCode"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.PostalCode" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.City" placeholder=" " />
+        <label asp-for="Person.City"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.City" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.Country" placeholder=" " />
+        <label asp-for="Person.Country"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.Country" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.PhoneNumber" placeholder=" " />
+        <label asp-for="Person.PhoneNumber"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.PhoneNumber" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Person.Email" placeholder=" " />
+        <label asp-for="Person.Email"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Person.Email" class="error"></span>
+    </div>
+
+    <div class="radio">
+        <label asp-for="Person.Member"></label>
+        <label>
+            <input asp-for="Person.Member" type="radio" value="1" />
+            Ja
+        </label>
+        <label>
+            <input asp-for="Person.Member" type="radio" value="0" />
+            Nej
+        </label>
+        <span asp-validation-for="Person.Member" class="error"></span>
+    </div>
+
+    <div class="radio">
+        <label asp-for="Person.BoatGuild"></label>
+        <label>
+            <input asp-for="Person.BoatGuild" type="radio" value="1" />
+            Ja
+        </label>
+        <label>
+            <input asp-for="Person.BoatGuild" type="radio" value="0" />
+            Nej
+        </label>
+        <span asp-validation-for="Person.BoatGuild" class="error"></span>
+    </div>
+
+    <div class="radio">
+        <label asp-for="Person.DingyGuild"></label>
+        <label>
+            <input asp-for="Person.DingyGuild" type="radio" value="1" />
+            Ja
+        </label>
+        <label>
+            <input asp-for="Person.DingyGuild" type="radio" value="0"/>
+            Nej
+        </label>
+        <span asp-validation-for="Person.DingyGuild" class="error"></span>
+    </div>
+
+    <div class="textarea">
+        <label asp-for="Person.Notes"></label>
+        <textarea asp-for="Person.Notes" placeholder=" "></textarea>
+        <span asp-validation-for="Person.Notes" class="error"></span>
+    </div>
+    <div class="submit">
+        <input class="create" type="submit" value="Gem ændringer" />
+    </div>
+</form>
+
+
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
