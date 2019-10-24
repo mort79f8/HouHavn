@@ -29,17 +29,17 @@
                     <li>
                         <span>Opret</span>
                         <div>
-                            <a asp-page="/creation/berths">Bådplads</a>
-                            <a asp-page="/creation/People">Kunde</a>
-                            <a asp-page="/creation/Boats">Båd</a>
+                            <a asp-page="/Creation/Berths">Bådplads</a>
+                            <a asp-page="/Creation/People">Kunde</a>
+                            <a asp-page="/Creation/Boats">Båd</a>
                         </div>
                     </li>
                     <li>
                         <span>Se liste over</span>
                         <div>
-                            <a asp-page="/Lists/Boats/index">Både</a>
                             <a asp-page="/Lists/Berths/index">Bådpladser</a>
-                            <a asp-page="/Lists/AllBerths">Bådpladser skabelon</a>
+                            <a asp-page="/lists/People/index">Kunder</a>
+                            <a asp-page="/Lists/Boats/index">Både</a>
                         </div>
                     </li>
                 </ul>
@@ -58,9 +58,9 @@
     </main>
 
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <p>&copy; 2019 - HouHavn.Web<a asp-page="/Privacy"></a></p>
+    <footer>
+        <div>
+            <p>&copy; @DateTime.Now.Year - Hou Havn<a asp-page="/Privacy"></a></p>
         </div>
     </footer>
 

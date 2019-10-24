@@ -19,7 +19,8 @@ header {
   left: 0;
   right: 0;
   z-index: 3;
-  width: 100%; }
+  width: 100%;
+  background: #123456; }
   header > div {
     width: 70%;
     display: flex;
@@ -28,11 +29,11 @@ header {
     align-items: center; }
     header > div .logo {
       text-decoration: none;
-      color: #333;
+      color: white;
       margin-right: 20px;
       position: relative;
       z-index: 100;
-      background: white; }
+      background: #123456; }
     header > div nav {
       display: flex;
       justify-content: space-between;
@@ -72,28 +73,30 @@ header {
             display: block;
             position: relative;
             z-index: 2;
-            background: white; }
+            background: #123456;
+            color: white; }
           header > div nav ul li:hover span {
-            background: #eee; }
+            background: #1b4e80; }
           header > div nav ul li:hover div {
             transform: translateY(100%); }
           header > div nav ul li div {
             position: absolute;
             bottom: 0;
-            background: white;
+            background: #123456;
+            color: white;
             width: 100%;
-            z-index: initial;
             transition: .3s; }
             header > div nav ul li div a {
               display: block;
               padding: 10px 20px;
               border: 1px solid #ccc;
-              color: black;
+              color: white;
               text-decoration: none; }
               header > div nav ul li div a:hover {
-                background: #eee; }
-              header > div nav ul li div a:nth-child(2) {
-                border-top: 0;
+                background: #1b4e80; }
+              header > div nav ul li div a:first-child {
+                border-bottom: 0; }
+              header > div nav ul li div a:not(:first-child):not(:last-child) {
                 border-bottom: 0; }
 
 main {
@@ -115,7 +118,9 @@ main {
 footer {
   width: 70%;
   padding: 15px 15%;
-  box-shadow: 0 0 10px black; }
+  box-shadow: 0 0 10px black;
+  color: white;
+  background: #123456; }
 
 form {
   max-width: 500px; }
@@ -233,31 +238,29 @@ table {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black; }
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 150px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  /*top: -5px;*/
-  left: 110%;
-  top: 14.5px;
-  transform: translateY(-50%); }
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent; }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    /*top: -5px;*/
+    left: 110%;
+    top: 14.5px;
+    transform: translateY(-50%); }
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent black transparent transparent; }
 
 .tooltip:hover .tooltiptext {
   visibility: visible; }
@@ -300,7 +303,8 @@ dl dd {
     width: 100vw; }
     header > div .logo {
       text-align: center;
-      width: 100%; }
+      width: 100%;
+      margin: 0; }
     header > div nav {
       display: flex;
       justify-content: space-around; } }

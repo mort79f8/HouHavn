@@ -23,6 +23,7 @@ header {
     right: 0;
     z-index: 3;
     width: 100%;
+    background: #123456;
 
     > div {
         width: 70%;
@@ -33,11 +34,11 @@ header {
 
         .logo {
             text-decoration: none;
-            color: #333;
+            color: white;
             margin-right: 20px;
             position: relative;
             z-index: 100;
-            background: white;
+            background: #123456;
         }
 
         nav {
@@ -93,12 +94,13 @@ header {
                         display: block;
                         position: relative;
                         z-index: 2;
-                        background: white;
+                        background: #123456;
+                        color: white;
                     }
 
                     &:hover {
                         span {
-                            background: #eee;
+                            background: lighten(#123456, 10%);
                         }
 
                         div {
@@ -106,12 +108,14 @@ header {
                         }
                     }
 
+
+
                     div {
                         position: absolute;
                         bottom: 0;
-                        background: white;
+                        background: #123456;
+                        color: white;
                         width: 100%;
-                        z-index: initial;
                         transition: .3s;
 
 
@@ -119,15 +123,18 @@ header {
                             display: block;
                             padding: 10px 20px;
                             border: 1px solid #ccc;
-                            color: black;
+                            color: white;
                             text-decoration: none;
 
                             &:hover {
-                                background: #eee;
+                                background: lighten(#123456, 10%);
                             }
 
-                            &:nth-child(2) {
-                                border-top: 0;
+                            &:first-child {
+                                border-bottom: 0;
+                            }
+
+                            &:not(:first-child):not(:last-child) {
                                 border-bottom: 0;
                             }
                         }
@@ -165,6 +172,8 @@ footer{
     width: 70%;
     padding: 15px 15%;
     box-shadow: 0 0 10px black;
+    color: white;
+    background: #123456;
 }
 
 form {
@@ -347,33 +356,33 @@ table {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
-}
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 150px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    /*top: -5px;*/
-    left: 110%;
-    top: 14.5px;
-    transform: translateY(-50%);
-}
+    .tooltiptext {
+        visibility: hidden;
+        width: 150px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        /*top: -5px;*/
+        left: 110%;
+        top: 14.5px;
+        transform: translateY(-50%);
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent black transparent transparent;
+        }
+    }
 }
 
 .tooltip:hover .tooltiptext {
@@ -435,6 +444,7 @@ dl{
         .logo {
             text-align: center;
             width: 100%;
+            margin: 0;
         }
 
         nav{
