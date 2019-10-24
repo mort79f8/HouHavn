@@ -24,7 +24,8 @@ header {
     width: 70%;
     display: flex;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    align-items: center; }
     header > div .logo {
       text-decoration: none;
       color: #333;
@@ -39,7 +40,26 @@ header {
       header > div nav form {
         justify-content: flex-end;
         position: absolute;
-        right: 0; }
+        right: 0;
+        display: flex; }
+        header > div nav form input {
+          font-size: .9em;
+          padding: 5px;
+          border: none;
+          border: 2px solid #5D9BFB;
+          outline: none; }
+        header > div nav form input[type=text] {
+          border-radius: 10px 0 0 10px;
+          border-right: none; }
+        header > div nav form input[type=submit] {
+          padding: 5px 15px;
+          background: #5D9BFB;
+          transition: .3s;
+          color: white;
+          border-radius: 0 10px 10px 0; }
+          header > div nav form input[type=submit]:hover {
+            background: #2b7cfa;
+            border-color: #2b7cfa; }
       header > div nav ul {
         list-style: none;
         display: flex; }
@@ -99,6 +119,13 @@ footer {
 
 form {
   max-width: 500px; }
+  form .check-box-label {
+    padding: 10px; }
+  form .check-box:checked + div.input {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0; }
   form * {
     box-sizing: border-box; }
   form div.radio {
@@ -107,6 +134,8 @@ form {
       margin: 10px;
       display: block; }
   form div.input {
+    transition: .3s;
+    opacity: 1;
     height: 50px;
     margin-top: 20px;
     position: relative;
@@ -165,25 +194,37 @@ form {
     form div.submit input {
       padding: 15px 30px;
       border: none;
-      background: #5D9BFB;
       font-size: 1rem;
       color: white;
       transition: background .3s; }
-      form div.submit input:hover {
+      form div.submit input.create {
+        background: #5D9BFB; }
+      form div.submit input.delete {
+        background: #f00; }
+      form div.submit input.create:hover {
         background: #2b7cfa; }
+      form div.submit input.delete:hover {
+        background: #cc0000; }
   form div.select {
     margin-top: 20px; }
     form div.select select {
       width: 100%;
       padding: 5px; }
 
-.table {
+table {
   overflow-x: auto;
   border-spacing: 0; }
-  .table th, .table td {
+  table th, table td {
     padding: 5px 15px; }
-  .table tr:nth-child(even) {
+  table tr:nth-child(even) {
     background: #eee; }
+  table a {
+    color: black;
+    transition: .3s; }
+    table a:hover {
+      color: #5D9BFB; }
+    table a.delete:hover {
+      color: #dd0000; }
 
 .error {
   color: #dd0000; }
@@ -195,7 +236,7 @@ form {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 150px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -203,8 +244,10 @@ form {
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  top: -5px;
-  left: 110%; }
+  /*top: -5px;*/
+  left: 110%;
+  top: 14.5px;
+  transform: translateY(-50%); }
 
 .tooltip .tooltiptext::after {
   content: "";
@@ -241,6 +284,10 @@ form {
       text-decoration: none;
       color: black;
       height: 100%; }
+
+dl dd {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 15px 10px; }
 
 @media screen and (max-width: 660px) {
   main {

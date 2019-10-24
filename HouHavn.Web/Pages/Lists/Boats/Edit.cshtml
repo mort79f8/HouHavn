@@ -1,0 +1,92 @@
+﻿@page
+@model HouHavn.Web.Pages.Boats.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Redigér detaljer for båd</h1>
+<hr />
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Boat.BoatId" />
+    <div class="input">
+        <input asp-for="Boat.Name" placeholder=" " />
+        <label asp-for="Boat.Name"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Name" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Type" placeholder=" " />
+        <label asp-for="Boat.Type"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Type" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Length" placeholder=" " />
+        <label asp-for="Boat.Length"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Length" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Width" placeholder=" " />
+        <label asp-for="Boat.Width"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Width" class="error"></span>
+    </div>
+
+    <div class="input">
+        <input asp-for="Boat.Dept" placeholder=" " />
+        <label asp-for="Boat.Dept"></label>
+        <div class="slider"></div>
+    </div>
+    <div>
+        <span asp-validation-for="Boat.Dept" class="error"></span>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.PropulsionType"></label>
+        <select asp-for="Boat.PropulsionType">
+            <option value="Motorbåd/Jolle">Motorbåd/Jolle</option>
+            <option value="Sejlbåd/Kølbåd">Sejlbåd/Kølbåd</option>
+        </select>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.Person"></label>
+        <select asp-for="Boat.Person" asp-items="ViewBag.Person"></select>
+    </div>
+
+    <div class="select">
+        <label asp-for="Boat.Berth"></label>
+        <select asp-for="Boat.Berth" asp-items="ViewBag.Berth"></select>
+    </div>
+
+    <div class="textarea">
+        <label asp-for="Boat.Notes"></label>
+        <textarea asp-for="Boat.Notes"></textarea>
+    </div>
+    <div class="submit">
+        <input class="create" type="submit" value="Gem ændringer" />
+    </div>
+</form>
+
+<div>
+    <a asp-page="./Index">Tilbage til listen</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

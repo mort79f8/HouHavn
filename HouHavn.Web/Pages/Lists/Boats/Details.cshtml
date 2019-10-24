@@ -1,0 +1,72 @@
+﻿@page
+@model HouHavn.Web.Pages.Boats.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaljer for båd</h1>
+
+<div>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Length)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Length) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Width)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Width) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Dept)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Dept) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PropulsionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PropulsionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.BerthNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.BerthNavigation.BerthId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Boat.BoatId">Redigér</a> |
+    <a asp-page="./Index">Tilbage til listen</a>
+</div>

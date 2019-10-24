@@ -20,8 +20,8 @@ namespace HouHavn.Web.Pages.Creation
 
         public IActionResult OnGet()
         {
-        ViewData["Berth"] = new SelectList(_context.Berths, "BerthId", "BerthId");
-        ViewData["Person"] = new SelectList(_context.Persons, "PersonId", "FullName");
+            ViewData["Berth"] = new SelectList(_context.Berths.Where(b => b.Boats.Count == 0), "BerthId", "BerthId");
+            ViewData["Person"] = new SelectList(_context.Persons, "PersonId", "FullName");
             return Page();
         }
 

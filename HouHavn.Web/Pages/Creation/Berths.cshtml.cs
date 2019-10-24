@@ -11,9 +11,9 @@ namespace HouHavn.Web.Pages.Creation
 {
     public class BerthsModel : PageModel
     {
-        private readonly HouHavn.Web.Model.HouhavnContext _context;
+        private readonly HouhavnContext _context;
 
-        public BerthsModel(HouHavn.Web.Model.HouhavnContext context)
+        public BerthsModel(HouhavnContext context)
         {
             _context = context;
         }
@@ -25,6 +25,8 @@ namespace HouHavn.Web.Pages.Creation
 
         [BindProperty]
         public Berth Berth { get; set; }
+        public int NextId { get => _context.Berths.Last().BerthId + 1; }
+        public string ErrorMessage { get; set; } = "";
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,8 +35,26 @@ namespace HouHavn.Web.Pages.Creation
                 return Page();
             }
 
-            _context.Berths.Add(Berth);
-            await _context.SaveChangesAsync();
+            bool exists = false;
+
+            foreach (var item in _context.Berths)
+            {
+                if(item.BerthId == Berth.BerthId)
+                {
+                    exists = true;
+                }
+            }
+
+            if (exists)
+            {
+                ErrorMessage = "Pladsen findes allerede";
+                return Page();
+            }
+            else
+            {
+                _context.Berths.Add(Berth);
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToPage("Berths");
         }

@@ -1,0 +1,79 @@
+﻿@page
+@model HouHavn.Web.Pages.Boats.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Slet båd</h1>
+
+<h3>Er du sikker på at du vil slette denne båd?</h3>
+<div>
+    <hr />
+    <dl >
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Length)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Length)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Width)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Width)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Dept)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Dept)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PropulsionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PropulsionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.BerthNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.BerthNavigation.BerthId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Boat.BoatId" />
+
+        <div class="submit">
+            <input class="delete" type="submit" value="Slet båd" />
+        </div>
+
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

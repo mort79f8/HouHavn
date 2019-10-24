@@ -11,17 +11,22 @@
 <form method="post">
     @*<div asp-validation-summary="All" class="error"></div>*@
 
+    @{string exists = Model.ErrorMessage.Length == 0 ? "checked" : "";}
+
+    <label class="check-box-label" for="checkBox" >Automatisk nummertildeling</label>
+    <input class="check-box" type="checkbox" id="checkBox" @exists/>
     <div class="input">
-        <input asp-for="Berth.BerthId"  placeholder=" "/>
+        <input asp-for="Berth.BerthId"  placeholder=" " max="@Model.NextId" value="@Model.NextId"/>
         <label asp-for="Berth.BerthId"></label>
         <div class="slider"></div>
     </div>
     <div>
+        <span class="error">@Model.ErrorMessage</span>
         <span asp-validation-for="Berth.BerthId" class="error"></span>
     </div>
 
     <div class="input">
-        <input asp-for="Berth.Bridge" placeholder=" " />
+        <input asp-for="Berth.Bridge" placeholder=" " min="1"/>
         <label asp-for="Berth.Bridge"></label>
         <div class="slider"></div>
     </div>
@@ -30,7 +35,7 @@
     </div>
 
     <div class="submit">
-        <input type="submit" value="Opret bådplads" />
+        <input class="create" type="submit" value="Opret bådplads" />
     </div>
 </form>
 

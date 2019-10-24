@@ -37,13 +37,15 @@
                     <li>
                         <span>Se liste over</span>
                         <div>
-                            <a asp-page="/Lists/AllBerths">Bådpladser</a>
+                            <a asp-page="/Lists/Boats/index">Både</a>
+                            <a asp-page="/Lists/Berths/index">Bådpladser</a>
+                            <a asp-page="/Lists/AllBerths">Bådpladser skabelon</a>
                         </div>
                     </li>
                 </ul>
-                <form action="/Creation/SearchResult" method="get">
-                    <input type="text" placeholder="Søg" name="searchQuery"/>
-                    <button type="submit">Søg</button>
+                <form action="/Creation/SearchResult" method="get" autocomplete="off">
+                    <input type="text" placeholder="Søg" name="searchQuery" />
+                    <input type="submit" value="Søg" />
                 </form>
             </nav>
         </div>

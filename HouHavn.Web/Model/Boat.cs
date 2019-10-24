@@ -18,15 +18,15 @@ namespace HouHavn.Web.Model
 
         [Display(Name = "Længde")]
         [Required]
-        public double Length { get; set; }
+        public string Length { get; set; }
 
         [Display(Name = "Bredde")]
         [Required]
-        public double Width { get; set; }
+        public string Width { get; set; }
 
         [Display(Name = "Dybte")]
         [Required]
-        public double Dept { get; set; }
+        public string Dept { get; set; }
 
         [Display(Name = "Fremdrifts Type")]
         [Required]
@@ -42,7 +42,11 @@ namespace HouHavn.Web.Model
 
         [Display(Name = "Noter")]
         public string Notes { get; set; }
+
+        [Display(Name = "Bådplads")]
         public virtual Berth BerthNavigation { get; set; }
+
+        [Display(Name = "Ejer")]
         public virtual Person PersonNavigation { get; set; }
     }
 }
