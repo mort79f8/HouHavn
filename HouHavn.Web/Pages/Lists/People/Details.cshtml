@@ -5,87 +5,106 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detaljer for @Model.Person.FullName</h1>
 
 <div>
-    <h4>Person</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
+    <dl >
+        <dt >
             @Html.DisplayNameFor(model => model.Person.FirstName)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.FirstName)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.LastName)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.LastName)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.Address)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.Address)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.PostalCode)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.PostalCode)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.City)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.City)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.Country)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.Country)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.PhoneNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.PhoneNumber)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.Email)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.Email)
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.Member)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Person.Member)
+        <dd>
+            @if (Model.Person.Member == 1)
+            {
+                <p>Ja</p>
+            }
+            else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.BoatGuild)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Person.BoatGuild)
+        <dd>
+            @if (Model.Person.BoatGuild == 1)
+            {
+                <p>Ja</p>
+            }
+            else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.DingyGuild)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Person.DingyGuild)
+        <dd >
+            @if (Model.Person.DingyGuild == 1)
+            {
+                <p>Ja</p>
+            }else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt class="col-sm-2">
+        <dt >
             @Html.DisplayNameFor(model => model.Person.Notes)
         </dt>
-        <dd class="col-sm-10">
+        <dd >
             @Html.DisplayFor(model => model.Person.Notes)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Person.PersonId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Person.PersonId">Redigér</a> |
+    <a href='javascript:history.go(-1)'>Tilbage</a>
 </div>

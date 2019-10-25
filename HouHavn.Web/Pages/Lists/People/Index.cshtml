@@ -24,12 +24,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Person[0].Country)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Person[0].PhoneNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Person[0].Email)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Person[0].Member)
             </th>
@@ -61,12 +61,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
-            </td>
+            </td>*@
             <td>
                 @if (item.Member == 1)
                 {
@@ -97,9 +97,9 @@
             </td>
 
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.PersonId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PersonId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PersonId">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.PersonId">Redigér</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonId">Detaljer</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonId" class="delete">Slet</a>
             </td>
         </tr>
 }

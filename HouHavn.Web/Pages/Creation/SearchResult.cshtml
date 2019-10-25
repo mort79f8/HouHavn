@@ -47,8 +47,10 @@
                     @Html.DisplayFor(modelItem => item.BerthNavigation.BerthId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PersonNavigation.FullName)
-                </td>
+                    <a asp-page="../Lists/People/Details" asp-route-id="@item.PersonNavigation.PersonId">
+                        @Html.DisplayFor(modelItem => item.PersonNavigation.FullName)
+                    </a>
+</td>
                 <td>
                     @*<a asp-page="../Lists/Boats/Edit" asp-route-id="@item.BoatId">Redigér</a> |
                     <a asp-page="../Lists/Boats/Details" asp-route-id="@item.BoatId">Detaljer</a> |
