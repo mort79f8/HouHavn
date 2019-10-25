@@ -1,4 +1,6 @@
-﻿body{
+﻿$light-blue: #5D9BFB;
+
+body{
     overflow-x: hidden;
 }
 
@@ -56,26 +58,27 @@ header {
                     font-size: .9em;
                     padding: 5px;
                     border: none;
-                    border: 2px solid #5D9BFB;
+                    border: 2px solid $light-blue;
                     outline: none;
                 }
 
                 input[type=text] {
                     border-radius: 10px 0 0 10px;
+                    width: 250px;
                     border-right: none;
                 }
 
                 input[type=submit] {
                     padding: 5px 15px;
-                    background: #5D9BFB;
+                    background: $light-blue;
                     transition: .3s;
                     color: white;
                     border-radius: 0 10px 10px 0;
 
 
                     &:hover {
-                        background: darken(#5D9BFB, 10%);
-                        border-color: darken(#5D9BFB, 10%);
+                        background: darken($light-blue, 10%);
+                        border-color: darken($light-blue, 10%);
                     }
                 }
             }
@@ -123,6 +126,8 @@ header {
                             display: block;
                             padding: 10px 20px;
                             border: 1px solid #ccc;
+                            border-left: none;
+                            border-right: none;
                             color: white;
                             text-decoration: none;
 
@@ -150,6 +155,10 @@ main{
     padding: 40px 15% 60px;
     /* header - footer - main-padding */
     min-height: calc(100vh - 52px - 52px - 100px);
+
+    h1{
+        margin-bottom: 20px;
+    }
 
     .links {
         padding: 20px 0;
@@ -179,7 +188,11 @@ footer{
 form {
     max-width: 500px;
 
-    .check-box-label {
+    .check-box{
+            
+        margin-top: 20px;
+    }
+        .check-box-label {
         padding: 10px;
     }
 
@@ -225,7 +238,7 @@ form {
         input:focus + label, input:not(:placeholder-shown) + label {
             bottom: 20px;
             font-size: .9rem;
-            color: #5D9BFB;
+            color: $light-blue;
 
             & + .slider {
                 transform: translateX(0);
@@ -261,7 +274,7 @@ form {
             bottom: 0;
             height: 3px;
             width: 100%;
-            background: #5D9BFB;
+            background: $light-blue;
             margin: 0;
             transform: translateX(-100%);
         }
@@ -294,7 +307,7 @@ form {
             transition: background .3s;
 
             &.create {
-                background: #5D9BFB;
+                background: $light-blue;
             }
 
             &.delete {
@@ -302,7 +315,7 @@ form {
             }
 
             &.create:hover {
-                background: darken(#5D9BFB, 10%);
+                background: darken($light-blue, 10%);
             }
 
             &.delete:hover {
@@ -339,10 +352,10 @@ table {
 
 
         &:hover {
-            color: #5D9BFB;
+            color: $light-blue;
         }
 
-        &.delete:hover{
+        &.delete:hover {
             color: #dd0000;
         }
     }
@@ -420,11 +433,14 @@ table {
 }
 
 dl{
+    margin-top: 20px;
+
     dt{
+        color: $light-blue;
+        font-size: .9rem;
     }
     dd{
-        border-bottom: 1px solid #ccc;
-        padding: 5px 15px 10px;
+        padding: 0 15px 15px;
     }
 }
 

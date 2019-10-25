@@ -51,6 +51,7 @@ header {
           outline: none; }
         header > div nav form input[type=text] {
           border-radius: 10px 0 0 10px;
+          width: 250px;
           border-right: none; }
         header > div nav form input[type=submit] {
           padding: 5px 15px;
@@ -90,6 +91,8 @@ header {
               display: block;
               padding: 10px 20px;
               border: 1px solid #ccc;
+              border-left: none;
+              border-right: none;
               color: white;
               text-decoration: none; }
               header > div nav ul li div a:hover {
@@ -104,6 +107,8 @@ main {
   padding: 40px 15% 60px;
   /* header - footer - main-padding */
   min-height: calc(100vh - 52px - 52px - 100px); }
+  main h1 {
+    margin-bottom: 20px; }
   main .links {
     padding: 20px 0; }
     main .links a {
@@ -124,6 +129,8 @@ footer {
 
 form {
   max-width: 500px; }
+  form .check-box {
+    margin-top: 20px; }
   form .check-box-label {
     padding: 10px; }
   form .check-box:checked + div.input {
@@ -288,9 +295,13 @@ table {
       color: black;
       height: 100%; }
 
-dl dd {
-  border-bottom: 1px solid #ccc;
-  padding: 5px 15px 10px; }
+dl {
+  margin-top: 20px; }
+  dl dt {
+    color: #5D9BFB;
+    font-size: .9rem; }
+  dl dd {
+    padding: 0 15px 15px; }
 
 @media screen and (max-width: 660px) {
   main {

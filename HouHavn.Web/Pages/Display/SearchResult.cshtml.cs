@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace HouHavn.Web.Pages.Creation
+namespace HouHavn.Web.Pages.Display
 {
     public class SearchResultModel : PageModel
     {
