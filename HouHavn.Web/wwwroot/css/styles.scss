@@ -355,118 +355,129 @@ table {
             color: $light-blue;
         }
 
-        &.delete:hover {
-            color: #dd0000;
-        }
     }
 }
 
-.error{
+main a.delete:hover {
     color: #dd0000;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
+main a {
+    color: black;
+    transition: .3s;
 
-    .tooltiptext {
-        visibility: hidden;
-        width: 150px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        /*top: -5px;*/
-        left: 110%;
-        top: 14.5px;
-        transform: translateY(-50%);
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 100%;
-            margin-top: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: transparent black transparent transparent;
-        }
-    }
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.notavailable {
-    background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,255,0,0.8));
-}
-.available {
-    background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(255,0,0,0.8));
-}
-
-.berthdisplay{
-    display: flex;
-    align-content: flex-start;
-    flex-direction: column;
-    height: 300px;
-    flex-wrap: wrap;
-
-    div{
-        height: 10%;
-        width: 14%;
-        box-sizing: border-box;
-        margin-right: 2.6%;
-
-        a{
-            display: block;
-            text-decoration: none;
-            color: black;
-            height: 100%;
-        }
-    }
-
-}
-
-dl{
-    margin-top: 20px;
-
-    dt{
+    &:hover {
         color: $light-blue;
-        font-size: .9rem;
-    }
-    dd{
-        padding: 0 15px 15px;
     }
 }
 
-@media screen and (max-width:660px){
-    main {
-        padding: 40px 5% 60px;
-        /* header - footer - main-padding */
-        min-height: calc(100vh - 89px - 52px - 100px);
-        width: 90%;
+    .error {
+        color: #dd0000;
     }
 
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
 
-    header >div{
-        flex-direction: column;
-        width: 100vw;
-
-        .logo {
+        .tooltiptext {
+            visibility: hidden;
+            width: 150px;
+            background-color: black;
+            color: #fff;
             text-align: center;
-            width: 100%;
-            margin: 0;
-        }
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            /*top: -5px;*/
+            left: 110%;
+            top: 14.5px;
+            transform: translateY(-50%);
 
-        nav{
-            display: flex;
-            justify-content: space-around;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 100%;
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent black transparent transparent;
+            }
         }
     }
-}
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .notavailable {
+        background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,255,0,0.8));
+    }
+
+    .available {
+        background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(255,0,0,0.8));
+    }
+
+    .berthdisplay {
+        display: flex;
+        align-content: flex-start;
+        flex-direction: column;
+        height: 300px;
+        flex-wrap: wrap;
+
+        div {
+            height: 10%;
+            width: 14%;
+            box-sizing: border-box;
+            margin-right: 2.6%;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+                height: 100%;
+            }
+        }
+    }
+
+    dl {
+        margin-top: 20px;
+
+        dt {
+            color: $light-blue;
+            font-size: .9rem;
+        }
+
+        dd {
+            padding: 0 15px 15px;
+        }
+    }
+
+    @media screen and (max-width:660px) {
+        main {
+            padding: 40px 5% 60px;
+            /* header - footer - main-padding */
+            min-height: calc(100vh - 89px - 52px - 100px);
+            width: 90%;
+        }
+
+
+        header > div {
+            flex-direction: column;
+            width: 100vw;
+
+            .logo {
+                text-align: center;
+                width: 100%;
+                margin: 0;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
 

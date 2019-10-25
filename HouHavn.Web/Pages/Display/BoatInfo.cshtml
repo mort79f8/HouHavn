@@ -7,7 +7,7 @@
 
 @if (Model.Boat != null)
 {
-    <h1>Info side til: @Model.Boat.Name</h1>
+    <h1>Info side til: <a asp-page="../Lists/Boats/Details" asp-route-id="@Model.Boat.BoatId">@Model.Boat.Name</a></h1>
     <br />
     <p>Type: @Model.Boat.Type</p>
     <p>Længde: @Model.Boat.Length</p>
@@ -15,7 +15,7 @@
     <p>Dybte: @Model.Boat.Dept</p>
     <p>Noter: @Model.Boat.Notes</p>
     <br />
-    <p>Ejer: @Model.Boat.PersonNavigation.FullName</p>    
+    <p>Ejer: <a asp-page="../Lists/People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Model.Boat.PersonNavigation.FullName</a></p>
     <p>Adresse: @Model.Boat.PersonNavigation.Address</p>
     <p>Post nummer: @Model.Boat.PersonNavigation.PostalCode</p>
     <p>By: @Model.Boat.PersonNavigation.City</p>
@@ -27,7 +27,7 @@
     <p>Kunde af havn: @(@Model.Boat.PersonNavigation.Member == 1 ? "Ja" : "Nej")</p>
     <p>Medlem af bådlaug: @(@Model.Boat.PersonNavigation.BoatGuild == 1 ? "Ja" : "Nej")</p>
     <p>Medlem af Jollelaug: @(@Model.Boat.PersonNavigation.DingyGuild == 1 ? "Ja" : "Nej")</p>
-    
+
 
 
 }

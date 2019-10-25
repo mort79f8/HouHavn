@@ -235,8 +235,15 @@ table {
     transition: .3s; }
     table a:hover {
       color: #5D9BFB; }
-    table a.delete:hover {
-      color: #dd0000; }
+
+main a.delete:hover {
+  color: #dd0000; }
+
+main a {
+  color: black;
+  transition: .3s; }
+  main a:hover {
+    color: #5D9BFB; }
 
 .error {
   color: #dd0000; }

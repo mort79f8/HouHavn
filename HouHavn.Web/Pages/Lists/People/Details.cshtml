@@ -102,9 +102,19 @@
         <dd >
             @Html.DisplayFor(model => model.Person.Notes)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.Boats)
+        </dt>
+        <dd>
+            @foreach (var boat in Model.Person.Boats)
+            {                
+                <a asp-page="../Boats/Details" asp-route-id="@boat.BoatId">@boat.Name</a><br />
+            }
+</dd>
     </dl>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Person.PersonId">Redigér</a> |
-    <a href='javascript:history.go(-1)'>Tilbage</a>
+    <a href='javascript:history.go(-1)'>Tilbage</a> |
+    <a asp-page="./Delete" asp-route-id="@Model.Person.PersonId" class="delete">Slet</a>
 </div>

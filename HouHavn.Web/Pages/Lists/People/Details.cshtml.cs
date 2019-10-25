@@ -19,6 +19,7 @@ namespace HouHavn.Web.Pages.Lists.People
         }
 
         public Person Person { get; set; }
+        public IList<Boat> Boats { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,6 +29,7 @@ namespace HouHavn.Web.Pages.Lists.People
             }
 
             Person = await _context.Persons.FirstOrDefaultAsync(m => m.PersonId == id);
+            Boats = await _context.Boats.ToListAsync();
 
             if (Person == null)
             {
