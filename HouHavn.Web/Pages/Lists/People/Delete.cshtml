@@ -11,44 +11,44 @@
 <div>
 
     <hr />
-    <dl >
-        <dt >
+    <dl>
+        <dt>
             @Html.DisplayNameFor(model => model.Person.FirstName)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.FirstName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Person.LastName)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.LastName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Person.Address)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.Address)
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.PostalCode)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Person.PostalCode)
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.City)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.City)
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.Country)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.Country)
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.PhoneNumber)
         </dt>
         <dd>
@@ -57,31 +57,52 @@
         <dt>
             @Html.DisplayNameFor(model => model.Person.Email)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.Email)
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.Member)
         </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Person.Member)
+        <dd>
+            @if (Model.Person.Member == 1)
+            {
+                <p>Ja</p>
+            }
+            else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.BoatGuild)
         </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Person.BoatGuild)
+        <dd>
+            @if (Model.Person.BoatGuild == 1)
+            {
+                <p>Ja</p>
+            }
+            else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.DingyGuild)
         </dt>
-        <dd >
-            @Html.DisplayFor(model => model.Person.DingyGuild)
+        <dd>
+            @if (Model.Person.DingyGuild == 1)
+            {
+                <p>Ja</p>
+            }
+            else
+            {
+                <p>Nej</p>
+            }
         </dd>
-        <dt >
+        <dt>
             @Html.DisplayNameFor(model => model.Person.Notes)
         </dt>
-        <dd >
+        <dd>
             @Html.DisplayFor(model => model.Person.Notes)
         </dd>
     </dl>
