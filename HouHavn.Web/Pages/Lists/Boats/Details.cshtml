@@ -62,7 +62,7 @@
             @Html.DisplayNameFor(model => model.Boat.PersonNavigation)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)
+            <a asp-page="../People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)</a>
         </dd>
     </dl>
 </div>

@@ -19,6 +19,8 @@ namespace HouHavn.Web.Pages.Display
 
         public IList<Boat> Boats { get; set; }
         public IList<Person> People { get; set; }
+        public IList<Berth> Berths { get; set; }
+
 
         public BoatInfoModel(HouhavnContext context)
         {
@@ -31,6 +33,7 @@ namespace HouHavn.Web.Pages.Display
             Boats = await _context.Boats.ToListAsync();
             Boat = Boats.Where(b => b.BoatId == BoatId).FirstOrDefault();
             People = await _context.Persons.ToListAsync();
+            Berths = await _context.Berths.ToListAsync();
         }
 
     }

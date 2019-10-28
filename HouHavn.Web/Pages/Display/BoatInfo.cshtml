@@ -7,29 +7,116 @@
 
 @if (Model.Boat != null)
 {
-    <h1>Info side til: <a asp-page="../Lists/Boats/Details" asp-route-id="@Model.Boat.BoatId">@Model.Boat.Name</a></h1>
-    <br />
-    <p>Type: @Model.Boat.Type</p>
-    <p>Længde: @Model.Boat.Length</p>
-    <p>Bredde: @Model.Boat.Width</p>
-    <p>Dybte: @Model.Boat.Dept</p>
-    <p>Noter: @Model.Boat.Notes</p>
-    <br />
-    <p>Ejer: <a asp-page="../Lists/People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Model.Boat.PersonNavigation.FullName</a></p>
-    <p>Adresse: @Model.Boat.PersonNavigation.Address</p>
-    <p>Post nummer: @Model.Boat.PersonNavigation.PostalCode</p>
-    <p>By: @Model.Boat.PersonNavigation.City</p>
-    <p>Land: @Model.Boat.PersonNavigation.Country</p>
-    <p>E-mail: @Model.Boat.PersonNavigation.Email</p>
-    <p>Tlf nummer: @Model.Boat.PersonNavigation.PhoneNumber</p>
-    <p>Noter: @Model.Boat.PersonNavigation.Notes</p>
-    <br />
-    <p>Kunde af havn: @(@Model.Boat.PersonNavigation.Member == 1 ? "Ja" : "Nej")</p>
-    <p>Medlem af bådlaug: @(@Model.Boat.PersonNavigation.BoatGuild == 1 ? "Ja" : "Nej")</p>
-    <p>Medlem af Jollelaug: @(@Model.Boat.PersonNavigation.DingyGuild == 1 ? "Ja" : "Nej")</p>
+    <h1>Info om plads nr. @Html.DisplayFor(model => model.Boat.BerthNavigation.BerthId)</h1>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Name)
+        </dt>
+        <dd>
+            <a asp-page="../Lists/Boats/Details" asp-route-id="@Model.Boat.BoatId">@Html.DisplayFor(model => model.Boat.Name)</a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Length)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Length) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Width)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Width) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Dept)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Dept) meter
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Notes)
+        </dd>
 
 
-
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.FullName)
+        </dt>
+        <dd>
+            <a asp-page="../Lists/People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)</a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.PostalCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.PostalCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.Country)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boat.PersonNavigation.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.PersonNavigation.Notes)
+        </dd>
+        <br />
+        <dt>
+            Kunde af havn:
+        </dt>
+        <dd>
+            @(@Model.Boat.PersonNavigation.Member == 1 ? "Ja" : "Nej")
+        </dd>
+        <dt>
+            Medlem af bådlaug:
+        </dt>
+        <dd>
+            @(@Model.Boat.PersonNavigation.BoatGuild == 1 ? "Ja" : "Nej")
+        </dd>
+        <dt>
+            Medlem af Jollelaug:
+        </dt>
+        <dd>
+            @(@Model.Boat.PersonNavigation.DingyGuild == 1 ? "Ja" : "Nej")
+        </dd>
+    </dl>
+    <a href='javascript:history.go(-1)'>Tilbage</a>
 }
 else
 {
