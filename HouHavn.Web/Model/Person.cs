@@ -67,6 +67,7 @@ namespace HouHavn.Web.Model
                 return FirstName + " " + LastName;
             }
         }
+        [Display(Name = "Både")]
         public virtual ICollection<Boat> Boats { get; set; }
     }
 }
