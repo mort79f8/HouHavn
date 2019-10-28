@@ -20,6 +20,8 @@ namespace HouHavn.Web.Pages.Lists.People
 
         [BindProperty]
         public Person Person { get; set; }
+        public IList<Boat> Boats { get; set; }
+        public string ErrorMsg { get; set; } = "";
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,6 +31,7 @@ namespace HouHavn.Web.Pages.Lists.People
             }
 
             Person = await _context.Persons.FirstOrDefaultAsync(m => m.PersonId == id);
+            Boats = await _context.Boats.ToListAsync();
 
             if (Person == null)
             {
@@ -45,14 +48,27 @@ namespace HouHavn.Web.Pages.Lists.People
             }
 
             Person = await _context.Persons.FindAsync(id);
+            Boats = await _context.Boats.ToListAsync();
 
             if (Person != null)
             {
-                _context.Persons.Remove(Person);
-                await _context.SaveChangesAsync();
+                if (Person.Boats != null)
+                {
+                    ErrorMsg = "Kunden har en båd, man kan ikke slette en kunde som har en båd i haven.";
+                    return Page();
+                }
+                else
+                {
+                    _context.Persons.Remove(Person);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("./Index");
+                }
+            }
+            else
+            {
+                return RedirectToPage("./Index");
             }
 
-            return RedirectToPage("./Index");
         }
     }
 }
