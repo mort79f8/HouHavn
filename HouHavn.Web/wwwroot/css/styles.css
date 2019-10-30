@@ -228,7 +228,8 @@ table {
   overflow-x: auto;
   border-spacing: 0; }
   table th, table td {
-    padding: 5px 15px; }
+    padding: 5px 15px;
+    text-align: left; }
   table tr:nth-child(even) {
     background: #eee; }
   table a {
@@ -236,6 +237,12 @@ table {
     transition: .3s; }
     table a:hover {
       color: #5D9BFB; }
+
+.main {
+  display: flex;
+  justify-content: space-between; }
+  .main > div {
+    flex-grow: 1; }
 
 main a.delete:hover {
   color: #dd0000; }
@@ -267,7 +274,7 @@ main a {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; }
+  border-bottom: 1px solid white; }
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 150px;
@@ -279,7 +286,7 @@ main a {
     position: absolute;
     z-index: 1;
     /*top: -5px;*/
-    left: 110%;
+    left: 200%;
     top: 14.5px;
     transform: translateY(-50%); }
     .tooltip .tooltiptext::after {
@@ -296,27 +303,32 @@ main a {
   visibility: visible; }
 
 .notavailable {
-  background-image: linear-gradient(to right, transparent 60%, rgba(0, 255, 0, 0.8)); }
+  /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(78, 174, 78, 0.80));*/
+  background: #4d5c74; }
 
 .available {
-  background-image: linear-gradient(to right, transparent 60%, rgba(255, 0, 0, 0.8)); }
+  /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
+  background: #d33131; }
 
 .berthdisplay {
   display: flex;
   align-content: flex-start;
   flex-direction: column;
   height: 300px;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  color: #ebe2e2;
+  text-align: center; }
   .berthdisplay div {
     height: 10%;
-    width: 14%;
+    width: 10%;
     box-sizing: border-box;
-    margin-right: 2.6%; }
+    margin-right: 2.6%;
+    padding-top: 4px; }
     .berthdisplay div a {
       display: block;
       text-decoration: none;
-      color: black;
-      height: 100%; }
+      height: 100%;
+      color: #ebe2e2; }
 
 dl {
   margin-top: 20px; }

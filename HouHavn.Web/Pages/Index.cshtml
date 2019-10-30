@@ -5,39 +5,73 @@
     ViewData["Title"] = "Forside";
 }
 
-<h1>Pladsnummer</h1>
-
+<h1>Plads nummer</h1>
+<hr />
+<br />
 @{
     int totalBerths = Model.Berth.Count;
-    int totalNumberOfBoxs = totalBerths / 60;
+    int totalNumberOfBoxs = totalBerths / 100;
 }
 
-@for (int i = 0; i < totalNumberOfBoxs + 1; i++)
-{
-
-    <div class="berthdisplay">
-        @foreach (var item in Model.Berth.Where(b => b.BerthId > i * 60 && b.BerthId <= (i+1) * 60))
-        {
-
-            string avail = item.Boats.FirstOrDefault() != null ? "available" : "notavailable";
-
-        <div class="tooltip @avail ">
-            @if (item.Boats.FirstOrDefault() != null)
+<div class="main">
+    @for (int i = 1; i < 4; i++)
+    {
+    <div>
+        <h2>Bro nr @i</h2>
+        <div class="berthdisplay">
+            @foreach (var berth in Model.Berth.Where(b => b.Bridge == i))
             {
-                <a href="/display/boatinfo/@item.Boats.FirstOrDefault().BoatId">
-                    @Html.DisplayFor(modelItem => item.BerthId)
-                    @if (item.Boats.FirstOrDefault() != null)
+                string avail = berth.Boats.FirstOrDefault() != null ? "available" : "notavailable";
+                <div class="tooltip @avail ">
+                    @if (berth.Boats.FirstOrDefault() != null)
                     {
-                        <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
+                        <a href="/display/boatinfo/@berth.Boats.FirstOrDefault().BoatId">
+                            @Html.DisplayFor(modelItem => berth.BerthId)
+                            @if (berth.Boats.FirstOrDefault() != null)
+                            {
+                                <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => berth.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => berth.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
+                            }
+                        </a>
                     }
-                </a>
-            }
-            else
-            {
-                @Html.DisplayFor(modelItem => item.BerthId)
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => berth.BerthId)
+                    }
+                </div>
             }
         </div>
-        }
     </div>
-<br />
-}
+    }
+</div>
+
+@*<div class="main">
+        @for (int i = 0; i < totalNumberOfBoxs + 1; i++)
+        {
+
+            <div class="berthdisplay">
+                @foreach (var item in Model.Berth.Where(b => b.BerthId > i * 90 && b.BerthId <= (i + 1) * 90))
+                {
+
+                    string avail = item.Boats.FirstOrDefault() != null ? "available" : "notavailable";
+
+                    <div class="tooltip @avail ">
+                        @if (item.Boats.FirstOrDefault() != null)
+                        {
+                            <a href="/display/boatinfo/@item.Boats.FirstOrDefault().BoatId">
+                                @Html.DisplayFor(modelItem => item.BerthId)
+                                @if (item.Boats.FirstOrDefault() != null)
+                                {
+                                    <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
+                                }
+                            </a>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.BerthId)
+                        }
+                    </div>
+                }
+            </div>
+            <br />
+        }        
+</div>*@
