@@ -29,5 +29,6 @@ namespace HouHavn.Web.Pages
             Boats = await _context.Boats.ToListAsync();
             People = await _context.Persons.ToListAsync();
         }
+
     }
 }

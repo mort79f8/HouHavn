@@ -240,8 +240,8 @@ table {
 .main {
   display: flex;
   justify-content: space-between; }
-  .main img {
-    width: 500px; }
+  .main > div {
+    flex-grow: 1; }
 
 main a.delete:hover {
   color: #dd0000; }
@@ -270,7 +270,7 @@ main a {
     position: absolute;
     z-index: 1;
     /*top: -5px;*/
-    left: 110%;
+    left: 200%;
     top: 14.5px;
     transform: translateY(-50%); }
     .tooltip .tooltiptext::after {
@@ -301,11 +301,10 @@ main a {
   height: 300px;
   flex-wrap: wrap;
   color: #ebe2e2;
-  text-align: center;
-  width: calc(100% - 500px); }
+  text-align: center; }
   .berthdisplay div {
     height: 10%;
-    width: 5%;
+    width: 10%;
     box-sizing: border-box;
     margin-right: 2.6%;
     padding-top: 4px; }
