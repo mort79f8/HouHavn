@@ -5,39 +5,40 @@
     ViewData["Title"] = "Forside";
 }
 
-<h1>Båd plads nummer</h1>
+<h1>Plads nummer</h1>
 
 @{
     int totalBerths = Model.Berth.Count;
-    int totalNumberOfBoxs = totalBerths / 60;
+    int totalNumberOfBoxs = totalBerths / 100;
 }
-
-@for (int i = 0; i < totalNumberOfBoxs + 1; i++)
-{
-
-    <div class="berthdisplay">
-        @foreach (var item in Model.Berth.Where(b => b.BerthId > i * 60 && b.BerthId <= (i+1) * 60))
+<div class="main">
+        @for (int i = 0; i < totalNumberOfBoxs + 1; i++)
         {
 
-            string avail = item.Boats.FirstOrDefault() != null ? "available" : "notavailable";
+            <div class="berthdisplay">
+                @foreach (var item in Model.Berth.Where(b => b.BerthId > i * 90 && b.BerthId <= (i + 1) * 90))
+                {
 
-        <div class="tooltip @avail ">
-            @if (item.Boats.FirstOrDefault() != null)
-            {
-                <a href="/display/boatinfo/@item.Boats.FirstOrDefault().BoatId">
-                    @Html.DisplayFor(modelItem => item.BerthId)
-                    @if (item.Boats.FirstOrDefault() != null)
-                    {
-                        <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
-                    }
-                </a>
-            }
-            else
-            {
-                @Html.DisplayFor(modelItem => item.BerthId)
-            }
-        </div>
-        }
-    </div>
-<br />
-}
+                    string avail = item.Boats.FirstOrDefault() != null ? "available" : "notavailable";
+
+                    <div class="tooltip @avail ">
+                        @if (item.Boats.FirstOrDefault() != null)
+                        {
+                            <a href="/display/boatinfo/@item.Boats.FirstOrDefault().BoatId">
+                                @Html.DisplayFor(modelItem => item.BerthId)
+                                @if (item.Boats.FirstOrDefault() != null)
+                                {
+                                    <span class="tooltiptext">Båd: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().Name) <br />Ejer: @Html.DisplayFor(modelItem => item.Boats.FirstOrDefault().PersonNavigation.FullName)</span>
+                                }
+                            </a>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.BerthId)
+                        }
+                    </div>
+                }
+            </div>
+            <br />
+        }        
+</div>

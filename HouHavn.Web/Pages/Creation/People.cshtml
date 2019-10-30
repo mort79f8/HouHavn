@@ -86,11 +86,11 @@
     <div class="radio">
         <label asp-for="Person.Member"></label>
         <label>
-            <input asp-for="Person.Member" type="radio" value="1"/>
+            <input asp-for="Person.Member" type="radio" value="1" checked/>
             Ja
         </label>
         <label>
-            <input asp-for="Person.Member" type="radio" value="0" checked/>
+            <input asp-for="Person.Member" type="radio" value="0"/>
             Nej
         </label>
         <span asp-validation-for="Person.Member" class="error"></span>

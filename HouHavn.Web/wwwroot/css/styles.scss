@@ -340,6 +340,7 @@ table {
 
     th, td {
         padding: 5px 15px;
+        text-align:left;
     }
 
     tr:nth-child(even) {
@@ -355,6 +356,15 @@ table {
             color: $light-blue;
         }
 
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    
+    img{
+        width: 500px;
     }
 }
 
@@ -378,7 +388,7 @@ main a {
     .tooltip {
         position: relative;
         display: inline-block;
-        border-bottom: 1px dotted black;
+        border-bottom: 1px solid white;
 
         .tooltiptext {
             visibility: hidden;
@@ -413,34 +423,40 @@ main a {
     }
 
     .notavailable {
-        background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,255,0,0.8));
+        /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(78, 174, 78, 0.80));*/
+        background: #4d5c74;
     }
 
     .available {
-        background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(255,0,0,0.8));
+        /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
+        background: #d33131;
     }
 
-    .berthdisplay {
-        display: flex;
-        align-content: flex-start;
-        flex-direction: column;
-        height: 300px;
-        flex-wrap: wrap;
+.berthdisplay {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    height: 300px;
+    flex-wrap: wrap;
+    color: #ebe2e2;
+    text-align:center;
+    width: calc(100% - 500px);
 
-        div {
-            height: 10%;
-            width: 14%;
-            box-sizing: border-box;
-            margin-right: 2.6%;
+    div {
+        height: 10%;
+        width: 5%;
+        box-sizing: border-box;
+        margin-right: 2.6%;
+        padding-top: 4px;
 
-            a {
-                display: block;
-                text-decoration: none;
-                color: black;
-                height: 100%;
-            }
+        a {
+            display: block;
+            text-decoration: none;
+            height: 100%;
+            color: #ebe2e2;
         }
     }
+}
 
     dl {
         margin-top: 20px;
