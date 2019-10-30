@@ -1,4 +1,16 @@
-﻿$light-blue: #5D9BFB;
+﻿/*$light-blue: #5D9BFB;*/
+$light-blue: #56789a;
+$dark-blue: #123456;
+$red: #d33;
+$blue: #4d5c74;
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    h3{
+        margin-bottom: 10px;
+    }
+}
 
 body{
     overflow-x: hidden;
@@ -29,7 +41,7 @@ header {
     right: 0;
     z-index: 3;
     width: 100%;
-    background: #123456;
+    background: $dark-blue;
 
     > div {
         width: 70%;
@@ -44,7 +56,7 @@ header {
             margin-right: 20px;
             position: relative;
             z-index: 100;
-            background: #123456;
+            background: $dark-blue;
         }
 
         nav {
@@ -101,13 +113,13 @@ header {
                         display: block;
                         position: relative;
                         z-index: 2;
-                        background: #123456;
+                        background: $dark-blue;
                         color: white;
                     }
 
                     &:hover {
                         span {
-                            background: lighten(#123456, 10%);
+                            background: lighten($dark-blue, 10%);
                         }
 
                         div {
@@ -120,7 +132,7 @@ header {
                     div {
                         position: absolute;
                         bottom: 0;
-                        background: #123456;
+                        background: $dark-blue;
                         color: white;
                         width: 100%;
                         transition: .3s;
@@ -136,7 +148,7 @@ header {
                             text-decoration: none;
 
                             &:hover {
-                                background: lighten(#123456, 10%);
+                                background: lighten($dark-blue, 10%);
                             }
 
                             &:first-child {
@@ -177,20 +189,20 @@ main{
     }
 }
 
-footer{
+footer {
     width: 70%;
     padding: 15px 15%;
     box-shadow: 0 0 10px black;
     color: white;
-    background: #123456;
+    background: $dark-blue;
 }
 
 form {
     max-width: 500px;
 
-    .check-box{
-            
+    .check-box {
     }
+
     .check-box-label {
         padding: 10px;
     }
@@ -225,7 +237,7 @@ form {
         overflow: hidden;
         border-bottom: 1px solid #ccc;
 
-        &:first-child{
+        &:first-child {
             margin-top: 0;
         }
 
@@ -314,7 +326,7 @@ form {
             }
 
             &.delete {
-                background: #f00;
+                background: $red;
             }
 
             &.create:hover {
@@ -322,7 +334,7 @@ form {
             }
 
             &.delete:hover {
-                background: darken(#f00, 10%);
+                background: darken($red, 10%);
             }
         }
     }
@@ -372,7 +384,7 @@ table {
 }
 
 main a.delete:hover {
-    color: #dd0000;
+    color: $red;
 }
 
 main a {
@@ -389,10 +401,10 @@ main a {
         display: inline-block;
 
         &.delete {
-            background: red;
+            background: $red;
 
             &:hover {
-                background: darken(red, 10%);
+                background: darken($red, 10%);
             }
         }
 
@@ -409,7 +421,7 @@ main a {
 }
 
     .error {
-        color: #dd0000;
+        color: $red;
     }
 
     .tooltip {
@@ -451,13 +463,13 @@ main a {
 
     .notavailable {
         /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(78, 174, 78, 0.80));*/
-        background: #4d5c74;
+        background: $blue;
     }
 
-    .available {
-        /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
-        background: #d33131;
-    }
+.available {
+    /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
+    background: $red;
+}
 
 .berthdisplay {
     display: flex;
