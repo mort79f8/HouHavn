@@ -2,71 +2,42 @@
 @model HouHavn.Web.Pages.Boats.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Slet båd";
 }
 
-<h1>Slet båd</h1>
+<h2>Slet båd</h2>
 
 <h3>Er du sikker på at du vil slette denne båd?</h3>
 <div>
     <hr />
-    <dl >
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Type)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Length)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Length)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Width)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Width)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Dept)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Dept)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.PropulsionType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.PropulsionType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.Notes)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.Notes)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.BerthNavigation)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.BerthNavigation.BerthId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Boat.PersonNavigation)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)
-        </dd>
-    </dl>
-    
+    <h3>Bådoplysninger:</h3>
+    <p>
+        @Html.DisplayNameFor(model => model.Boat.Name): <a asp-page="../Lists/Boats/Details" asp-route-id="@Model.Boat.BoatId">@Html.DisplayFor(model => model.Boat.Name)</a>
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Boat.Type): @Html.DisplayFor(model => model.Boat.Type)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Boat.Length): @Html.DisplayFor(model => model.Boat.Length) meter
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Boat.Width): @Html.DisplayFor(model => model.Boat.Width) meter
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Boat.Dept): @Html.DisplayFor(model => model.Boat.Dept) meter
+    </p>
+
+    <p>
+        @Html.DisplayFor(model => model.Boat.Notes)
+    </p>
+    <p>
+        <a asp-page="../People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)</a>
+    </p>
+
     <form method="post">
         <input type="hidden" asp-for="Boat.BoatId" />
 
@@ -74,7 +45,6 @@
             <input class="delete" type="submit" value="Slet båd" />
         </div>
 
-        <a href='javascript:history.go(-1)'>Tilbage</a>
-        @*<a asp-page="./Index">Back to List</a>*@
+        <a class="button" href='javascript:history.go(-1)'>Tilbage</a>
     </form>
 </div>

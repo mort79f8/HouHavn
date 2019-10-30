@@ -15,6 +15,10 @@ h1, h2, h3, h4 {
     font-weight: lighter;
 }
 
+hr{
+    margin-bottom: 20px;
+}
+
 header {
     box-shadow: 0 0 10px black;
     align-items: center;
@@ -156,10 +160,6 @@ main{
     /* header - footer - main-padding */
     min-height: calc(100vh - 52px - 52px - 100px);
 
-    h1{
-        margin-bottom: 20px;
-    }
-
     .links {
         padding: 20px 0;
 
@@ -190,9 +190,8 @@ form {
 
     .check-box{
             
-        margin-top: 20px;
     }
-        .check-box-label {
+    .check-box-label {
         padding: 10px;
     }
 
@@ -225,6 +224,10 @@ form {
         position: relative;
         overflow: hidden;
         border-bottom: 1px solid #ccc;
+
+        &:first-child{
+            margin-top: 0;
+        }
 
 
         > label, input[type=text], input[type=email], input[type=number] {
@@ -365,6 +368,30 @@ main a.delete:hover {
 main a {
     color: black;
     transition: .3s;
+
+    &.button {
+        text-decoration: none;
+        background: $light-blue;
+        padding: 15px;
+        margin-top: 20px;
+        margin-right: 10px;
+        color: white;
+        display: inline-block;
+
+        &.delete {
+            background: red;
+
+            &:hover {
+                background: darken(red, 10%);
+            }
+        }
+
+        &:hover {
+            color: white;
+            background: darken($light-blue, 10%);
+        }
+    }
+
 
     &:hover {
         color: $light-blue;

@@ -2,28 +2,21 @@
 @model HouHavn.Web.Pages.Lists.Berths.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Slet bådplads";
 }
 
-<h1>Slet bådplads</h1>
+<h2>Slet bådplads</h2>
 
 <h3>Er du sikker på at du vil slette denne bådplads?</h3>
 <div>
     <hr />
-    <dl>
-        <dt>
-            @Html.DisplayNameFor(model => model.Berth.Bridge)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Berth.Bridge)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Berth.BerthId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Berth.BerthId)
-        </dd>
-    </dl>
+    <p>
+        @Html.DisplayNameFor(model => model.Berth.Bridge): @Html.DisplayFor(model => model.Berth.Bridge)
+    </p>
+    <p>
+        @Html.DisplayNameFor(model => model.Berth.BerthId): @Html.DisplayFor(model => model.Berth.BerthId)
+    </p>
+
     
     <form method="post">
         <input type="hidden" asp-for="Berth.BerthId" />
@@ -31,6 +24,6 @@
         <div class="submit">
             <input type="submit" value="Slet bådplads" class="delete" />
         </div>
-        <a href='javascript:history.go(-1)'>Tilbage</a>
+        <a class="button" href='javascript:history.go(-1)'>Tilbage</a>
     </form>
 </div>

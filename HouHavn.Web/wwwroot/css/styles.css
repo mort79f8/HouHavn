@@ -10,6 +10,9 @@ h1, h2, h3, h4 {
   font-family: 'Raleway', sans-serif;
   font-weight: lighter; }
 
+hr {
+  margin-bottom: 20px; }
+
 header {
   box-shadow: 0 0 10px black;
   align-items: center;
@@ -107,8 +110,6 @@ main {
   padding: 40px 15% 60px;
   /* header - footer - main-padding */
   min-height: calc(100vh - 52px - 52px - 100px); }
-  main h1 {
-    margin-bottom: 20px; }
   main .links {
     padding: 20px 0; }
     main .links a {
@@ -129,8 +130,6 @@ footer {
 
 form {
   max-width: 500px; }
-  form .check-box {
-    margin-top: 20px; }
   form .check-box-label {
     padding: 10px; }
   form .check-box:checked + div.input {
@@ -153,6 +152,8 @@ form {
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid #ccc; }
+    form div.input:first-child {
+      margin-top: 0; }
     form div.input > label, form div.input input[type=text], form div.input input[type=email], form div.input input[type=number] {
       height: 100%;
       width: 100%;
@@ -242,6 +243,21 @@ main a.delete:hover {
 main a {
   color: black;
   transition: .3s; }
+  main a.button {
+    text-decoration: none;
+    background: #5D9BFB;
+    padding: 15px;
+    margin-top: 20px;
+    margin-right: 10px;
+    color: white;
+    display: inline-block; }
+    main a.button.delete {
+      background: red; }
+      main a.button.delete:hover {
+        background: #cc0000; }
+    main a.button:hover {
+      color: white;
+      background: #2b7cfa; }
   main a:hover {
     color: #5D9BFB; }
 

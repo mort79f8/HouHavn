@@ -5,7 +5,7 @@
     ViewData["Title"] = "Redigér detaljer for kunde";
 }
 
-<h1>Redigér detaljer for kunde</h1>
+<h2>Redigér detaljer for kunde</h2>
 
 <hr />
 
@@ -132,10 +132,7 @@
 </form>
 
 
-
-<div>
-    <a href='javascript:history.go(-1)'>Tilbage</a>
-</div>
+<a class="button" href='javascript:history.go(-1)'>Tilbage</a>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
