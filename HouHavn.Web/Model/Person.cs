@@ -50,10 +50,10 @@ namespace HouHavn.Web.Model
         [Display(Name = "Kunde af havnen")]
         public int Member { get; set; }
 
-        [Display(Name = "Bådlaug")]
+        [Display(Name = "Medlem af bådlaug")]
         public int BoatGuild { get; set; }
 
-        [Display(Name = "Jollelaug")]
+        [Display(Name = "Medlem af jollelaug")]
         public int DingyGuild { get; set; }
 
         [Display(Name = "Noter")]

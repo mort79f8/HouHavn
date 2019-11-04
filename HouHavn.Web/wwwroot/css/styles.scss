@@ -354,8 +354,12 @@ table {
     border-spacing: 0;
 
     th, td {
-        padding: 5px 15px;
+        padding: 5px 10px;
         text-align:left;
+    }
+
+    td:last-child{
+        
     }
 
     tr:nth-child(even) {
@@ -462,12 +466,10 @@ main a {
     }
 
     .notavailable {
-        /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(78, 174, 78, 0.80));*/
         background: $blue;
     }
 
 .available {
-    /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
     background: $red;
 }
 
@@ -497,15 +499,15 @@ main a {
 }
 
     dl {
-        margin-top: 20px;
 
         dt {
             color: $light-blue;
             font-size: .9rem;
+            padding-top: 15px;
         }
 
         dd {
-            padding: 0 15px 15px;
+            padding-left: 15px;
         }
     }
 

@@ -17,9 +17,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Person[0].Address)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Person[0].PostalCode)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Person[0].City)
             </th>
@@ -55,11 +55,11 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PostalCode)
+                @Html.DisplayFor(modelItem => item.PostalCode) @Html.DisplayFor(modelItem => item.City)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.City)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Country)
             </td>

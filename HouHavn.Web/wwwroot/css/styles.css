@@ -235,7 +235,7 @@ table {
   overflow-x: auto;
   border-spacing: 0; }
   table th, table td {
-    padding: 5px 15px;
+    padding: 5px 10px;
     text-align: left; }
   table tr:nth-child(even) {
     background: #eee; }
@@ -310,11 +310,9 @@ main a {
   visibility: visible; }
 
 .notavailable {
-  /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(78, 174, 78, 0.80));*/
   background: #4d5c74; }
 
 .available {
-  /*background-image: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(212, 39, 39, 0.80));*/
   background: #d33; }
 
 .berthdisplay {
@@ -337,13 +335,13 @@ main a {
       height: 100%;
       color: #ebe2e2; }
 
-dl {
-  margin-top: 20px; }
-  dl dt {
-    color: #56789a;
-    font-size: .9rem; }
-  dl dd {
-    padding: 0 15px 15px; }
+dl dt {
+  color: #56789a;
+  font-size: .9rem;
+  padding-top: 15px; }
+
+dl dd {
+  padding-left: 15px; }
 
 @media screen and (max-width: 660px) {
   main {

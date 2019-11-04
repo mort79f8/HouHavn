@@ -52,7 +52,7 @@ namespace HouHavn.Web.Pages.Lists.People
 
             if (Person != null)
             {
-                if (Person.Boats != null)
+                if (Person.Boats.Count != 0)
                 {
                     ErrorMsg = "Kunden har en båd, man kan ikke slette en kunde som har en båd i haven.";
                     return Page();
