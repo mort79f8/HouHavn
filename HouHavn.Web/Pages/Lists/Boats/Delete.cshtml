@@ -11,32 +11,28 @@
 <div>
     <hr />
     <h3>Bådoplysninger:</h3>
-    <p>
-        @Html.DisplayNameFor(model => model.Boat.Name): <a asp-page="../Lists/Boats/Details" asp-route-id="@Model.Boat.BoatId">@Html.DisplayFor(model => model.Boat.Name)</a>
-    </p>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Name)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Name)</dd>
 
-    <p>
-        @Html.DisplayNameFor(model => model.Boat.Type): @Html.DisplayFor(model => model.Boat.Type)
-    </p>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Type)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Type)</dd>
 
-    <p>
-        @Html.DisplayNameFor(model => model.Boat.Length): @Html.DisplayFor(model => model.Boat.Length) meter
-    </p>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Length)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Length) meter</dd>
 
-    <p>
-        @Html.DisplayNameFor(model => model.Boat.Width): @Html.DisplayFor(model => model.Boat.Width) meter
-    </p>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Width)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Width) meter</dd>
 
-    <p>
-        @Html.DisplayNameFor(model => model.Boat.Dept): @Html.DisplayFor(model => model.Boat.Dept) meter
-    </p>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Dept)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Dept) meter</dd>
 
-    <p>
-        @Html.DisplayFor(model => model.Boat.Notes)
-    </p>
-    <p>
-        <a asp-page="../People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)</a>
-    </p>
+        <dt>@Html.DisplayNameFor(model => model.Boat.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Boat.Notes)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Boat.Person)</dt>
+        <dd><a asp-page="../People/Details" asp-route-id="@Model.Boat.PersonNavigation.PersonId">@Html.DisplayFor(model => model.Boat.PersonNavigation.FullName)</a></dd>
+    </dl>
 
     <form method="post">
         <input type="hidden" asp-for="Boat.BoatId" />

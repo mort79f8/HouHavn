@@ -10,13 +10,13 @@
 <h3>Er du sikker på at du vil slette denne bådplads?</h3>
 <div>
     <hr />
-    <p>
-        @Html.DisplayNameFor(model => model.Berth.Bridge): @Html.DisplayFor(model => model.Berth.Bridge)
-    </p>
-    <p>
-        @Html.DisplayNameFor(model => model.Berth.BerthId): @Html.DisplayFor(model => model.Berth.BerthId)
-    </p>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Berth.Bridge)</dt>
+        <dd>@Html.DisplayFor(model => model.Berth.Bridge)</dd>
 
+        <dt>@Html.DisplayNameFor(model => model.Berth.BerthId)</dt>
+        <dd>@Html.DisplayFor(model => model.Berth.BerthId)</dd>
+    </dl>
     
     <form method="post">
         <input type="hidden" asp-for="Berth.BerthId" />

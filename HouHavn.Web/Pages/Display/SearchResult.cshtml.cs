@@ -39,11 +39,18 @@ namespace HouHavn.Web.Pages.Display
 
         private void Search(string searchquery)
         {
-            Boatlist = Boats.Where(b =>
-                b.PersonNavigation.FullName.ToLower().Contains(searchquery.ToLower()) ||
-                b.Name.ToLower().Contains(searchquery.ToLower()) ||
-                b.Type.ToLower().Contains(searchquery.ToLower())
-                ).ToList();
+            if (!string.IsNullOrWhiteSpace(searchquery))
+            {
+                Boatlist = Boats.Where(b =>
+                    b.PersonNavigation.FullName.ToLower().Contains(searchquery.ToLower()) ||
+                    b.Name.ToLower().Contains(searchquery.ToLower()) ||
+                    b.Type.ToLower().Contains(searchquery.ToLower())
+                    ).ToList();
+            }
+            else
+            {
+                Boatlist = new List<Boat>();
+            }
         }
     }
 }

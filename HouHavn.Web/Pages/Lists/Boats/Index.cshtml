@@ -33,7 +33,7 @@
 @foreach (var item in Model.Boat) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                <a asp-page="./Details" asp-route-id="@item.BoatId">@Html.DisplayFor(modelItem => item.Name)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
@@ -45,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.BerthNavigation.BerthId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PersonNavigation.FullName)
+                <a asp-page="../People/Details" asp-route-id="@item.PersonNavigation.PersonId">@Html.DisplayFor(modelItem => item.PersonNavigation.FullName)</a>
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.BoatId">Redigér</a> |
