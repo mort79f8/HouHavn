@@ -13,10 +13,10 @@
 
     @{string exists = Model.ErrorMessage.Length == 0 ? "checked" : "";}
 
-    <label class="check-box-label" for="checkBox" >Automatisk nummertildeling</label>
+    <label class="check-box-label" for="checkBox" >Automatisk nummertildeling (@Model.NextId)</label>
     <input class="check-box" type="checkbox" id="checkBox" @exists/>
     <div class="input">
-        <input asp-for="Berth.BerthId"  placeholder=" " max="@Model.NextId" value="@Model.NextId"/>
+        <input asp-for="Berth.BerthId"  placeholder=" " value="@Model.NextId"/>
         <label asp-for="Berth.BerthId"></label>
         <div class="slider"></div>
     </div>
@@ -39,6 +39,7 @@
     </div>
 </form>
 
+<script src="~/js/AutomaticNumber.js"></script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

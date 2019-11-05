@@ -20,6 +20,8 @@ namespace HouHavn.Web.Pages.Lists.Berths
 
         [BindProperty]
         public Berth Berth { get; set; }
+        public IList<Boat> Boats { get; set; }
+        public string ErrorMessagse { get; set; } = "";
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,6 +31,7 @@ namespace HouHavn.Web.Pages.Lists.Berths
             }
 
             Berth = await _context.Berths.FirstOrDefaultAsync(m => m.BerthId == id);
+
 
             if (Berth == null)
             {
@@ -45,14 +48,23 @@ namespace HouHavn.Web.Pages.Lists.Berths
             }
 
             Berth = await _context.Berths.FindAsync(id);
+            Boats = await _context.Boats.ToListAsync();
 
-            if (Berth != null)
+            if (Berth.Boats.Count > 0)
             {
-                _context.Berths.Remove(Berth);
-                await _context.SaveChangesAsync();
+                ErrorMessagse = "Der er en båd på denne plads, og kan derfor ikke slettes";
+            }
+            else
+            {
+                if (Berth != null)
+                {
+                    _context.Berths.Remove(Berth);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("./Index");
+                }
             }
 
-            return RedirectToPage("./Index");
+            return Page();
         }
     }
 }

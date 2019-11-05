@@ -21,6 +21,7 @@
     <form method="post">
         <input type="hidden" asp-for="Berth.BerthId" />
 
+        <p class="error">@Model.ErrorMessagse</p>
         <div class="submit">
             <input type="submit" value="Slet bådplads" class="delete" />
         </div>
