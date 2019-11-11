@@ -9,23 +9,23 @@ namespace HouHavn.Web.Model
         public int BoatId { get; set; }
 
         [Display(Name = "Bådens navn")]
-        [Required]
+        [Required(ErrorMessage ="Bådens navn skal udfyldes")]
         public string Name { get; set; }
 
         [Display(Name = "Båd type")]
-        [Required]
+        [Required(ErrorMessage = "Bådens type skal udfyldes")]
         public string Type { get; set; }
 
         [Display(Name = "Længde")]
-        [Required]
+        [Required(ErrorMessage = "Bådens længde skal udfyldes")]
         public string Length { get; set; }
 
         [Display(Name = "Bredde")]
-        [Required]
+        [Required(ErrorMessage = "Bådens bredde skal udfyldes")]
         public string Width { get; set; }
 
         [Display(Name = "Dybte")]
-        [Required]
+        [Required(ErrorMessage = "Bådens dybte skal udfyldes")]
         public string Depth { get; set; }
 
         [Display(Name = "Fremdrifts Type")]

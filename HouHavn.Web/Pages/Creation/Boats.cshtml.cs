@@ -13,6 +13,37 @@ namespace HouHavn.Web.Pages.Creation
     {
         private readonly HouHavn.Web.Model.HouhavnContext _context;
 
+        public bool IsBerthEmpty
+        {
+            get
+            {
+                if (_context.Berths.Where(b => b.Boats.Count == 0).Count() == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+        }
+
+        public bool IsOwnerEmpty
+        {
+            get
+            {
+                if (_context.Persons.Count() == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public BoatsModel(HouHavn.Web.Model.HouhavnContext context)
         {
             _context = context;
