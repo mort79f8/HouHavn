@@ -26,7 +26,7 @@ namespace HouHavn.Web.Model
 
         [Display(Name = "Dybte")]
         [Required]
-        public string Dept { get; set; }
+        public string Depth { get; set; }
 
         [Display(Name = "Fremdrifts Type")]
         [Required]

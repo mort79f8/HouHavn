@@ -37,7 +37,8 @@ namespace HouHavn.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
-            var connection = @"Server=(localdb)\mssqllocaldb;Database='HouHavn';Trusted_Connection=True;";
+            var connection = @"Server=(localdb)\mssqllocaldb;Database='HouHavntest';Trusted_Connection=True;";
+            //var connection = @"Server=DESKTOP-4671Q2B\SQLEXPRESS;Database='HouHavn';Trusted_Connection=True;";
             services.AddDbContext<HouhavnContext>(options => options.UseSqlServer(connection));
         }
 

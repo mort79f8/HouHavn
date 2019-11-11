@@ -25,7 +25,20 @@ namespace HouHavn.Web.Pages.Creation
 
         [BindProperty]
         public Berth Berth { get; set; }
-        public int NextId { get => _context.Berths.Last().BerthId + 1; }
+        public int NextId
+        {
+            get
+            {
+                if (_context.Berths.LastOrDefault() is null)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return _context.Berths.Last().BerthId + 1;
+                }
+            }
+        }
         public string ErrorMessage { get; set; } = "";
 
         public async Task<IActionResult> OnPostAsync()
